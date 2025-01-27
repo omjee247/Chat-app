@@ -1,6 +1,5 @@
 import User from '../models/user.model.js';
 import Message from '../models/message.model.js'
-import { UploadStream } from 'cloudinary';
 import cloudinary from '../lib/cloudinary.js';
 
 export const getUsersForSidebar = async(req,res) =>{
@@ -51,7 +50,7 @@ export const sendMessage = async(req, res) => {
         if(imageUrl){
             // Upload base64 image to cloudinary
 
-            const uploadResponse = await cloudinary.uplader.upload(image);
+            const uploadResponse = await cloudinary.uploader.upload(image);
             imageUrl = uploadResponse.secure_url;
         }
 
